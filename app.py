@@ -10,7 +10,7 @@ st.title("Student Performance Prediction System")
 
 # User input
 #feature1 = st.slider("Feature 1", 0.0, 10.0, 5.0)
-3rdsem=st.slider("scaled",300,900,1)
+thirdsem=st.slider("scaled",300,900,1)
 Studyhour=st.slider("Studyhour",1,4,1)
 Attendance=st.slider("Attendance",60,100,1)
 Health=st.slider("health",0,1,1)
@@ -30,3 +30,4 @@ if st.button("Predict"):
     input_data = pd.DataFrame([['3rdsem','Studyhour','Attendance','Health','InternetAccess','Region','DaysScholarORhosteler','Time','ParentsEducated','ClassResponse']], columns=['scaled','Study hours','Attendance','health','Internet Access','Region','D/H','Time',"Parent's educated",'class response'])
     prediction = model.predict(input_data)
     st.write(f"The prediction is: {prediction[0]}")
+
