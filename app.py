@@ -24,6 +24,15 @@ Time=st.slider("Time",5,40,1)
 ParentsEducated=st.slider("Parent's educated",0,1,1)
 ClassResponse=st.slider("class response",0,2,1)
 st.write(type((Thirdsem)))
+st.write(type((Studyhour)))
+st.write(type((Attendance)))
+st.write(type((Health)))
+st.write(type((InternetAccess)))
+st.write(type((Region)))
+st.write(type((DaysScholarORhosteler)))
+st.write(type((Time)))
+st.write(type((ParentsEducated)))
+st.write(type((ClassResponse)))
 # Preprocess input (if necessary)
 # ...
 
@@ -33,6 +42,7 @@ if st.button("Predict"):
     input_data = pd.DataFrame([['Thirdsem','Studyhour','Attendance','Health','InternetAccess','Region','DaysScholarORhosteler','Time','ParentsEducated','ClassResponse']], columns=['scaled','Study hours','Attendance','health','Internet Access','Region','D/H','Time',"Parent's educated",'class response'])
     prediction = model.predict(input_data)
     st.write(f"The prediction is: {prediction[0]}")
+
 
 
 
