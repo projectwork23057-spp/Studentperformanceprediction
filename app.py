@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-model=0
+
 # Load the saved model
 with open('model.pkl', 'rb') as f:
     global model
@@ -43,6 +43,7 @@ if st.button("Predict"):
     input_data = pd.DataFrame([['A','B','C','D','E','F','G','H','I','J']], columns=['scaled','Study hours','Attendance','health','Internet Access','Region','D/H','Time',"Parent's educated",'class response'])
     prediction = model.predict(input_data)
     st.write(f"The prediction is: {prediction[0]}")
+
 
 
 
