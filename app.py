@@ -3,7 +3,7 @@ import pickle
 import pandas as pd
 
 # Load the saved model
-with open('projectwork23057-spp/Studentperformanceprediction/main/model.pkl', 'rb') as f:
+with open('/projectwork23057-spp/Studentperformanceprediction/main/model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 st.title("Student Performance Prediction System")
@@ -30,5 +30,6 @@ if st.button("Predict"):
     input_data = pd.DataFrame([['3rdsem','Studyhour','Attendance','Health','InternetAccess','Region','DaysScholarORhosteler','Time','ParentsEducated','ClassResponse']], columns=['scaled','Study hours','Attendance','health','Internet Access','Region','D/H','Time',"Parent's educated",'class response'])
     prediction = model.predict(input_data)
     st.write(f"The prediction is: {prediction[0]}")
+
 
 
